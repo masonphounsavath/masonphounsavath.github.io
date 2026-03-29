@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mason Phounsavath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Page Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">MP</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#home" class="nav-logo">MP</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#interests" class="nav-link">Interests</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#resume" class="nav-link">Resume</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#interests" class="mobile-link">Interests</a></li>
+      <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+      <li><a href="#resume" class="mobile-link">Resume</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        <span class="hero-name-line">Mason</span>
+        <span class="hero-name-line">Phounsavath</span>
+      </h1>
+      <div class="hero-role">
+        <span class="role-static">I&nbsp;</span>
+        <span class="role-typed" id="roleCycle"></span>
+        <span class="role-cursor">|</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary magnetic">View My Work</a>
+        <a href="#contact" class="btn btn-ghost magnetic">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section-label">01 — About</p>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title split-title">Crafting Digital<br>Experiences</h2>
+          <p class="about-body fade-up">
+            I'm a Data Science student at the University of North Carolina – Chapel Hill
+            with a Computer Science minor, based in Charlotte, NC. I'm passionate about
+            using data and code to build things that are both technically rigorous and
+            visually compelling.
+          </p>
+          <p class="about-body fade-up">
+            From building machine learning models to crafting interactive applications,
+            I love the full stack — and I'm always chasing the intersection of
+            clean engineering and great design. Incoming Data Engineer Intern at
+            Fidelity Investments, Summer 2026.
+          </p>
+          <div class="stats-row">
+            <div class="stat fade-up">
+              <span class="stat-num" data-target="2">0</span><span class="stat-unit"></span>
+              <p>Universities</p>
+            </div>
+            <div class="stat fade-up">
+              <span class="stat-num" data-target="3">0</span><span class="stat-unit">+</span>
+              <p>Projects Built</p>
+            </div>
+            <div class="stat fade-up">
+              <span class="stat-num" data-target="6">0</span><span class="stat-unit">+</span>
+              <p>Tech Skills</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right fade-up">
+          <div class="profile-frame">
+            <img
+              src="assets/profile.jpg"
+              alt="Mason Phounsavath"
+              class="profile-img"
+              onerror="this.parentElement.classList.add('no-img')"
+            />
+            <div class="profile-deco"></div>
+            <div class="profile-deco-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <p class="section-label">02 — Projects</p>
+      <h2 class="section-title split-title">Selected Work</h2>
+    </div>
+
+    <div class="projects-grid container">
+      <!-- Card 1 -->
+      <article class="project-card" data-color="#6c63ff">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg,#6c63ff,#3ecfcf);">
+            <img src="assets/project1.jpg" alt="Bias Bars" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-hover-cta">View Project &rarr;</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-num">01</span>
+          <h3>Bias Bars: Gender-Based Review Analysis</h3>
+          <p>Analyzed gender bias in professor reviews using NLP and text analytics at Stanford. Built Python data pipelines for word frequency distribution and an interactive Tkinter GUI for dynamic visualization of language patterns.</p>
+          <div class="project-tags">
+            <span>Python</span><span>NLP</span><span>Tkinter</span><span>Text Analytics</span>
+          </div>
+        </div>
+        <a href="#" class="project-card-link" aria-label="View Bias Bars project"></a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project-card" data-color="#f7971e">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg,#f7971e,#ffd200);">
+            <img src="assets/project2.jpg" alt="ACC Basketball" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-hover-cta">View Project &rarr;</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-num">02</span>
+          <h3>Financial Investment vs. Performance in ACC Basketball</h3>
+          <p>Built a predictive ML model using a decision tree regressor to analyze the correlation between NCAA ACC program funding and win percentage across 15 schools. Achieved an R² score of 0.78 forecasting 2023 season outcomes.</p>
+          <div class="project-tags">
+            <span>Python</span><span>scikit-learn</span><span>pandas</span><span>matplotlib</span>
+          </div>
+        </div>
+        <a href="#" class="project-card-link" aria-label="View ACC Basketball project"></a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="project-card" data-color="#11998e">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg,#11998e,#38ef7d);">
+            <img src="assets/project3.jpg" alt="2D Dungeon Crawler" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-hover-cta">View Project &rarr;</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-num">03</span>
+          <h3>2D Dungeon Crawler</h3>
+          <p>Built a fully playable 2D dungeon crawler in Java and JavaFX, implementing front-end UI and back-end game logic. Designed OOP architecture with encapsulation, interfaces, and polymorphism to manage player movement, score tracking, and level progression.</p>
+          <div class="project-tags">
+            <span>Java</span><span>JavaFX</span><span>OOP</span>
+          </div>
+        </div>
+        <a href="#" class="project-card-link" aria-label="View Dungeon Crawler project"></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTERESTS
+  ============================================================ -->
+  <section class="interests" id="interests">
+    <div class="container">
+      <p class="section-label">03 — Interests</p>
+      <h2 class="section-title split-title">What Drives Me</h2>
+      <div class="interests-grid">
+        <div class="interest-card fade-up">
+          <div class="interest-icon">⚡</div>
+          <h3>Technology</h3>
+          <p>Staying on the cutting edge — from AI and machine learning to emerging web APIs.</p>
+        </div>
+        <div class="interest-card fade-up">
+          <div class="interest-icon">🎨</div>
+          <h3>Design</h3>
+          <p>Creating interfaces that are intuitive, elegant, and genuinely delightful to use.</p>
+        </div>
+        <div class="interest-card fade-up">
+          <div class="interest-icon">🎵</div>
+          <h3>Music</h3>
+          <p>Exploring genres, finding creative energy, and making playlists for every mood.</p>
+        </div>
+        <div class="interest-card fade-up">
+          <div class="interest-icon">📚</div>
+          <h3>Learning</h3>
+          <p>Reading, taking courses, and constantly growing both technically and creatively.</p>
+        </div>
+        <div class="interest-card fade-up">
+          <div class="interest-icon">🌍</div>
+          <h3>Travel</h3>
+          <p>Experiencing new cultures, cuisines, and perspectives around the world.</p>
+        </div>
+        <div class="interest-card fade-up">
+          <div class="interest-icon">🏋️</div>
+          <h3>Fitness</h3>
+          <p>Maintaining physical and mental health — the gym doubles as a thinking space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY
+  ============================================================ -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <p class="section-label">04 — Gallery</p>
+      <h2 class="section-title split-title">Moments</h2>
+    </div>
+
+    <div class="gallery-grid container">
+      <div class="gallery-item gi-tall fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#667eea,#764ba2);">
+          <img src="assets/gallery1.jpg" alt="Gallery 1" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#f093fb,#f5576c);">
+          <img src="assets/gallery2.jpg" alt="Gallery 2" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">
+          <img src="assets/gallery3.jpg" alt="Gallery 3" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+      <div class="gallery-item gi-wide fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">
+          <img src="assets/gallery4.jpg" alt="Gallery 4" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#fa709a,#fee140);">
+          <img src="assets/gallery5.jpg" alt="Gallery 5" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Caption here">
+        <div class="gi-inner" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb);">
+          <img src="assets/gallery6.jpg" alt="Gallery 6" onerror="this.style.display='none'" />
+        </div>
+        <div class="gi-overlay"><span>Caption here</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <img class="lb-img" id="lbImg" src="" alt="Gallery full view" />
+    <p class="lb-caption" id="lbCaption"></p>
+  </div>
+
+  <!-- ============================================================
+       RESUME
+  ============================================================ -->
+  <section class="resume" id="resume">
+    <div class="container">
+      <p class="section-label">05 — Resume</p>
+      <h2 class="section-title split-title">Experience &amp;<br>Education</h2>
+
+      <div class="resume-grid">
+        <!-- Experience -->
+        <div class="resume-col">
+          <h3 class="resume-col-title">Work Experience</h3>
+          <div class="timeline">
+            <div class="tl-item fade-up">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-date">Summer 2026</span>
+                <h4>Data Engineer Intern</h4>
+                <span class="tl-company">Fidelity Investments</span>
+                <p>Incoming Data Engineer Intern — excited to bring my data science and engineering skills to one of the world's leading financial services firms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education + Skills -->
+        <div class="resume-col">
+          <h3 class="resume-col-title">Education</h3>
+          <div class="timeline">
+            <div class="tl-item fade-up">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-date">Aug 2023 — May 2027</span>
+                <h4>B.S. Data Science</h4>
+                <span class="tl-company">University of North Carolina – Chapel Hill</span>
+                <p>Computer Science Minor &nbsp;·&nbsp; Sigma Chi Fraternity</p>
+              </div>
+            </div>
+            <div class="tl-item fade-up">
+              <div class="tl-dot"></div>
+              <div class="tl-body">
+                <span class="tl-date">Jun 2022 — Aug 2022</span>
+                <h4>Summer Semester</h4>
+                <span class="tl-company">Stanford University</span>
+                <p>Computer Science Concentration</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="resume-col-title" style="margin-top:3.5rem;">Skills</h3>
+          <div class="skills-list">
+            <div class="skill-row fade-up">
+              <span>Python</span>
+              <div class="skill-track"><div class="skill-fill" data-w="92"></div></div>
+            </div>
+            <div class="skill-row fade-up">
+              <span>JavaScript / HTML / CSS</span>
+              <div class="skill-track"><div class="skill-fill" data-w="88"></div></div>
+            </div>
+            <div class="skill-row fade-up">
+              <span>Java</span>
+              <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+            </div>
+            <div class="skill-row fade-up">
+              <span>SQL / MySQL</span>
+              <div class="skill-track"><div class="skill-fill" data-w="82"></div></div>
+            </div>
+            <div class="skill-row fade-up">
+              <span>React.js / Firebase</span>
+              <div class="skill-track"><div class="skill-fill" data-w="78"></div></div>
+            </div>
+            <div class="skill-row fade-up">
+              <span>Data Science & ML</span>
+              <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
+            </div>
+          </div>
+
+          <a href="assets/resume.pdf" download class="btn btn-primary magnetic resume-dl fade-up">
+            Download Resume PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label">06 — Contact</p>
+      <h2 class="section-title split-title">Let's Build<br>Something Great</h2>
+
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <p class="contact-desc">
+            Have a project in mind? Want to collaborate or just say hello?
+            I'm always open to interesting conversations and new opportunities.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:mphounsavath05@gmail.com" class="clink">
+              <span class="clink-label">Email</span>
+              <span class="clink-value">mphounsavath05@gmail.com</span>
+              <span class="clink-arrow">&rarr;</span>
+            </a>
+            <a href="https://linkedin.com/in/masonphounsavath" target="_blank" rel="noopener" class="clink">
+              <span class="clink-label">LinkedIn</span>
+              <span class="clink-value">linkedin.com/in/masonphounsavath</span>
+              <span class="clink-arrow">&rarr;</span>
+            </a>
+            <a href="https://github.com/masonphounsavath" target="_blank" rel="noopener" class="clink">
+              <span class="clink-label">GitHub</span>
+              <span class="clink-value">github.com/masonphounsavath</span>
+              <span class="clink-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form fade-up" id="contactForm" action="https://formspree.io/f/xaqlezwk" method="POST" novalidate>
+          <div class="field-group">
+            <input type="text" id="fname" name="name" placeholder=" " required />
+            <label for="fname">Your Name</label>
+          </div>
+          <div class="field-group">
+            <input type="email" id="femail" name="email" placeholder=" " required />
+            <label for="femail">Your Email</label>
+          </div>
+          <div class="field-group">
+            <textarea id="fmessage" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="fmessage">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-sent" style="display:none;">Sent! ✓</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">MP</span>
+      <p class="footer-copy">&copy; 2025 Mason Phounsavath. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/masonphounsavath" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/masonphounsavath" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
