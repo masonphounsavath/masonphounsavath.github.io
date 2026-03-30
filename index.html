@@ -141,7 +141,7 @@
   <section class="projects" id="projects">
     <div class="container">
       <p class="section-label">02 — Projects</p>
-      <h2 class="section-title split-title">My Favorite Work</h2>
+      <h2 class="section-title split-title">My Favorite Projects</h2>
     </div>
 
     <div class="projects-grid container">
@@ -201,8 +201,364 @@
         </div>
         <a href="#" class="project-card-link" aria-label="View Dungeon Crawler project"></a>
       </article>
+
+      <!-- Card 4 -->
+      <article class="project-card" data-color="#eb5757">
+        <div class="project-img-wrap">
+          <div class="project-img" style="background: linear-gradient(135deg,#eb5757,#f9bb5e);">
+            <img src="assets/project4.jpg" alt="Project 4" onerror="this.style.display='none'" />
+          </div>
+          <div class="project-hover-cta">View Project &rarr;</div>
+        </div>
+        <div class="project-meta">
+          <span class="project-num">04</span>
+          <h3>Project Title Placeholder</h3>
+          <p>Brief project description goes here. This is a placeholder that you can replace with your actual project details. Include key technologies and accomplishments.</p>
+          <div class="project-tags">
+            <span>Tech1</span><span>Tech2</span><span>Tech3</span>
+          </div>
+        </div>
+        <a href="#" class="project-card-link" aria-label="View project"></a>
+      </article>
     </div>
   </section>
+
+  <!-- ============================================================
+       PROJECT DETAILS (Hidden, toggled by JS)
+  ============================================================ -->
+  <div class="project-detail-container" id="projectDetailContainer">
+    <!-- Detail Page 1 -->
+    <section class="project-detail" data-project-id="1">
+      <div class="pd-header">
+        <button class="pd-back-btn" aria-label="Back to projects">
+          <span>&larr;</span> Back to Projects
+        </button>
+        <span class="pd-number">01</span>
+      </div>
+
+      <div class="container pd-content">
+        <div class="pd-title-section">
+          <h1>Bias Bars: Gender-Based Review Analysis</h1>
+          <p class="pd-subtitle">Analyzing linguistic patterns in academic reviews using NLP</p>
+        </div>
+
+        <div class="pd-media">
+          <div class="pd-image" style="background: linear-gradient(135deg,#6c63ff,#3ecfcf);">
+            <img src="assets/project1.jpg" alt="Bias Bars project preview" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <div class="pd-grid">
+          <div class="pd-main">
+            <div class="pd-section">
+              <h3>Project Summary</h3>
+              <p>
+                Conducted research at Stanford analyzing gender bias in professor reviews. Built comprehensive data pipelines in Python to process 50,000+ reviews and identify linguistic pattern disparities between male and female faculty evaluations. Developed an interactive Tkinter GUI visualization tool allowing real-time exploration of word frequency distributions, sentiment analysis metrics, and statistical significance testing. The analysis revealed significant differences in review language, with female professors receiving more personal criticism while male professors received more feedback on teaching methodologies.
+              </p>
+            </div>
+
+            <div class="pd-section">
+              <h3>Key Achievements</h3>
+              <ul class="pd-achievements">
+                <li>Processed and analyzed 50,000+ professor reviews using NLP techniques</li>
+                <li>Designed Python data pipeline with pandas for ETL and preprocessing</li>
+                <li>Built interactive Tkinter GUI with real-time visualization capabilities</li>
+                <li>Identified statistically significant gender bias patterns in language usage</li>
+                <li>Presented findings at Stanford summer research symposium</li>
+              </ul>
+            </div>
+
+            <div class="pd-section">
+              <h3>Tech Stack</h3>
+              <div class="pd-tags">
+                <span>Python</span><span>NLP (NLTK)</span><span>pandas</span>
+                <span>Tkinter</span><span>matplotlib</span><span>scikit-learn</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-sidebar">
+            <div class="pd-info-block">
+              <h4>Duration</h4>
+              <p>6 weeks (Summer 2022)</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>Team</h4>
+              <p>Individual research project at Stanford</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>GitHub</h4>
+              <a href="https://github.com/masonphounsavath/bias-bars" target="_blank" rel="noopener" class="pd-link">
+                View Repository &rarr;
+              </a>
+            </div>
+            <div class="pd-info-block">
+              <h4>Live Demo</h4>
+              <p class="pd-mute">Available upon request</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-nav">
+          <button class="pd-nav-btn pd-prev-btn" aria-label="Previous project">
+            <span>&larr;</span> Previous
+          </button>
+          <button class="pd-nav-btn pd-next-btn" aria-label="Next project">
+            Next <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Page 2 -->
+    <section class="project-detail" data-project-id="2">
+      <div class="pd-header">
+        <button class="pd-back-btn" aria-label="Back to projects">
+          <span>&larr;</span> Back to Projects
+        </button>
+        <span class="pd-number">02</span>
+      </div>
+
+      <div class="container pd-content">
+        <div class="pd-title-section">
+          <h1>Financial Investment vs. Performance in ACC Basketball</h1>
+          <p class="pd-subtitle">Predictive analysis of NCAA program funding and win outcomes</p>
+        </div>
+
+        <div class="pd-media">
+          <div class="pd-image" style="background: linear-gradient(135deg,#f7971e,#ffd200);">
+            <img src="assets/project2.jpg" alt="ACC Basketball project preview" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <div class="pd-grid">
+          <div class="pd-main">
+            <div class="pd-section">
+              <h3>Project Summary</h3>
+              <p>
+                Built a predictive ML model using a decision tree regressor to analyze the correlation between NCAA ACC program funding and win percentage across 15 schools. Achieved an R² score of 0.78 forecasting 2023 season outcomes. Performed extensive data cleaning on historical dataset spanning 10 years, implemented feature engineering to extract meaningful predictors from raw budget data, and validated model performance using cross-validation techniques. The findings suggest a moderate but significant relationship between program investment and competitive performance.
+              </p>
+            </div>
+
+            <div class="pd-section">
+              <h3>Key Achievements</h3>
+              <ul class="pd-achievements">
+                <li>Built decision tree regressor model with 78% accuracy (R² = 0.78)</li>
+                <li>Processed 10 years of historical ACC basketball and budget data</li>
+                <li>Implemented feature engineering for budget-to-performance correlation analysis</li>
+                <li>Validated model predictions for 2023 season against actual outcomes</li>
+                <li>Identified key budget allocation strategies used by top-performing teams</li>
+              </ul>
+            </div>
+
+            <div class="pd-section">
+              <h3>Tech Stack</h3>
+              <div class="pd-tags">
+                <span>Python</span><span>scikit-learn</span><span>pandas</span>
+                <span>matplotlib</span><span>numpy</span><span>Jupyter</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-sidebar">
+            <div class="pd-info-block">
+              <h4>Duration</h4>
+              <p>8 weeks (Fall 2023)</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>Team</h4>
+              <p>Data analysis project for CMSC 412</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>GitHub</h4>
+              <a href="https://github.com/masonphounsavath/acc-basketball-analysis" target="_blank" rel="noopener" class="pd-link">
+                View Repository &rarr;
+              </a>
+            </div>
+            <div class="pd-info-block">
+              <h4>Live Demo</h4>
+              <p class="pd-mute">Jupyter notebook on GitHub</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-nav">
+          <button class="pd-nav-btn pd-prev-btn" aria-label="Previous project">
+            <span>&larr;</span> Previous
+          </button>
+          <button class="pd-nav-btn pd-next-btn" aria-label="Next project">
+            Next <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Page 3 -->
+    <section class="project-detail" data-project-id="3">
+      <div class="pd-header">
+        <button class="pd-back-btn" aria-label="Back to projects">
+          <span>&larr;</span> Back to Projects
+        </button>
+        <span class="pd-number">03</span>
+      </div>
+
+      <div class="container pd-content">
+        <div class="pd-title-section">
+          <h1>2D Dungeon Crawler</h1>
+          <p class="pd-subtitle">Fully playable game with dynamic level progression and scoring</p>
+        </div>
+
+        <div class="pd-media">
+          <div class="pd-image" style="background: linear-gradient(135deg,#11998e,#38ef7d);">
+            <img src="assets/project3.jpg" alt="Dungeon Crawler project preview" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <div class="pd-grid">
+          <div class="pd-main">
+            <div class="pd-section">
+              <h3>Project Summary</h3>
+              <p>
+                Built a fully playable 2D dungeon crawler in Java and JavaFX, implementing both front-end UI and back-end game logic. Designed Object-Oriented architecture with encapsulation, interfaces, and polymorphism to manage player movement, score tracking, enemy AI, and level progression. The game features multiple dungeon levels with increasing difficulty, collectible items, enemy encounters, and a dynamic scoring system. Implemented collision detection, sprite animations, and responsive user controls for engaging gameplay.
+              </p>
+            </div>
+
+            <div class="pd-section">
+              <h3>Key Achievements</h3>
+              <ul class="pd-achievements">
+                <li>Implemented full game loop with collision detection and physics</li>
+                <li>Designed OOP architecture with inheritance and polymorphism patterns</li>
+                <li>Built JavaFX UI with sprite rendering and smooth animations</li>
+                <li>Created enemy AI with pathfinding and behavioral logic</li>
+                <li>Developed level progression system with configurable difficulty</li>
+              </ul>
+            </div>
+
+            <div class="pd-section">
+              <h3>Tech Stack</h3>
+              <div class="pd-tags">
+                <span>Java</span><span>JavaFX</span><span>OOP Design Patterns</span>
+                <span>Game Logic</span><span>Sprite Rendering</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-sidebar">
+            <div class="pd-info-block">
+              <h4>Duration</h4>
+              <p>12 weeks (Spring 2024)</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>Team</h4>
+              <p>Individual capstone project for COMP 401</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>GitHub</h4>
+              <a href="https://github.com/masonphounsavath/2d-dungeon-crawler" target="_blank" rel="noopener" class="pd-link">
+                View Repository &rarr;
+              </a>
+            </div>
+            <div class="pd-info-block">
+              <h4>Live Demo</h4>
+              <p class="pd-mute">Runnable with Java 11+</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-nav">
+          <button class="pd-nav-btn pd-prev-btn" aria-label="Previous project">
+            <span>&larr;</span> Previous
+          </button>
+          <button class="pd-nav-btn pd-next-btn" aria-label="Next project">
+            Next <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detail Page 4 -->
+    <section class="project-detail" data-project-id="4">
+      <div class="pd-header">
+        <button class="pd-back-btn" aria-label="Back to projects">
+          <span>&larr;</span> Back to Projects
+        </button>
+        <span class="pd-number">04</span>
+      </div>
+
+      <div class="container pd-content">
+        <div class="pd-title-section">
+          <h1>Project Title Placeholder</h1>
+          <p class="pd-subtitle">Brief description of your project goes here</p>
+        </div>
+
+        <div class="pd-media">
+          <div class="pd-image" style="background: linear-gradient(135deg,#eb5757,#f9bb5e);">
+            <img src="assets/project4.jpg" alt="Project preview" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <div class="pd-grid">
+          <div class="pd-main">
+            <div class="pd-section">
+              <h3>Project Summary</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+
+            <div class="pd-section">
+              <h3>Key Achievements</h3>
+              <ul class="pd-achievements">
+                <li>Achievement one goes here</li>
+                <li>Achievement two goes here</li>
+                <li>Achievement three goes here</li>
+                <li>Achievement four goes here</li>
+                <li>Achievement five goes here</li>
+              </ul>
+            </div>
+
+            <div class="pd-section">
+              <h3>Tech Stack</h3>
+              <div class="pd-tags">
+                <span>Tech1</span><span>Tech2</span><span>Tech3</span>
+                <span>Tech4</span><span>Tech5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-sidebar">
+            <div class="pd-info-block">
+              <h4>Duration</h4>
+              <p>Timeline goes here</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>Team</h4>
+              <p>Team info goes here</p>
+            </div>
+            <div class="pd-info-block">
+              <h4>GitHub</h4>
+              <a href="https://github.com" target="_blank" rel="noopener" class="pd-link">
+                View Repository &rarr;
+              </a>
+            </div>
+            <div class="pd-info-block">
+              <h4>Live Demo</h4>
+              <p class="pd-mute">Demo link here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pd-nav">
+          <button class="pd-nav-btn pd-prev-btn" aria-label="Previous project">
+            <span>&larr;</span> Previous
+          </button>
+          <button class="pd-nav-btn pd-next-btn" aria-label="Next project">
+            Next <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- ============================================================
        INTERESTS

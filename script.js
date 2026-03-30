@@ -576,3 +576,161 @@ gsap.to(canvas, {
   opacity: 0,
   ease: 'none'
 });
+
+/* ============================================================
+   PROJECT DETAIL PAGES
+============================================================ */
+
+let currentProjectId = null;
+
+// Get DOM elements
+const projectDetailContainer = document.getElementById('projectDetailContainer');
+const projectCards = document.querySelectorAll('.project-card');
+const projectDetails = document.querySelectorAll('.project-detail');
+
+// Open project detail
+function openProjectDetail(projectId) {
+  currentProjectId = projectId;
+
+  // Hide nav and prevent scroll
+  document.body.style.overflow = 'hidden';
+  document.getElementById('nav').style.visibility = 'hidden';
+
+  // Show container and active detail
+  projectDetailContainer.classList.add('active');
+  projectDetails.forEach(detail => {
+    detail.classList.remove('active');
+  });
+
+  const activeDetail = document.querySelector(
+    `.project-detail[data-project-id="${projectId}"]`
+  );
+  if (activeDetail) {
+    activeDetail.classList.add('active');
+    // Scroll to top of detail page
+    projectDetailContainer.scrollTop = 0;
+  }
+
+  // Update nav buttons state
+  updateNavButtons();
+}
+
+// Close project detail
+function closeProjectDetail() {
+  projectDetailContainer.classList.remove('active');
+  document.body.style.overflow = '';
+  document.getElementById('nav').style.visibility = 'visible';
+  currentProjectId = null;
+}
+
+// Navigate to next/prev project
+function navigateProject(direction) {
+  if (!currentProjectId) return;
+
+  const nextId = direction === 'next'
+    ? currentProjectId + 1
+    : currentProjectId - 1;
+
+  if (nextId >= 1 && nextId <= 4) {
+    // Fade out current detail
+    const currentDetail = document.querySelector(
+      `.project-detail[data-project-id="${currentProjectId}"]`
+    );
+    if (currentDetail) {
+      currentDetail.style.opacity = '0';
+      currentDetail.style.pointerEvents = 'none';
+    }
+
+    // After fade, show new detail
+    setTimeout(() => {
+      projectDetails.forEach(detail => {
+        detail.classList.remove('active');
+        detail.style.opacity = '';
+        detail.style.pointerEvents = '';
+      });
+
+      currentProjectId = nextId;
+      const newDetail = document.querySelector(
+        `.project-detail[data-project-id="${nextId}"]`
+      );
+      if (newDetail) {
+        newDetail.classList.add('active');
+        newDetail.style.opacity = '1';
+        projectDetailContainer.scrollTop = 0;
+      }
+
+      updateNavButtons();
+    }, 300);
+  }
+}
+
+// Update nav button states (disable first/last)
+function updateNavButtons() {
+  const prevBtn = document.querySelector(
+    `.project-detail[data-project-id="${currentProjectId}"] .pd-prev-btn`
+  );
+  const nextBtn = document.querySelector(
+    `.project-detail[data-project-id="${currentProjectId}"] .pd-next-btn`
+  );
+
+  if (prevBtn) {
+    prevBtn.disabled = currentProjectId === 1;
+  }
+  if (nextBtn) {
+    nextBtn.disabled = currentProjectId === 4;
+  }
+}
+
+// Add click listeners to project cards
+projectCards.forEach((card, index) => {
+  const link = card.querySelector('.project-card-link');
+  if (link) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectNum = parseInt(card.querySelector('.project-num').textContent);
+      openProjectDetail(projectNum);
+    });
+  }
+
+  // Make the entire card clickable
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', (e) => {
+    if (!e.target.closest('a') && !e.target.closest('button')) {
+      const projectNum = parseInt(card.querySelector('.project-num').textContent);
+      openProjectDetail(projectNum);
+    }
+  });
+});
+
+// Add listeners to detail page buttons
+document.querySelectorAll('.pd-back-btn').forEach(btn => {
+  btn.addEventListener('click', closeProjectDetail);
+});
+
+document.querySelectorAll('.pd-prev-btn').forEach(btn => {
+  btn.addEventListener('click', () => navigateProject('prev'));
+});
+
+document.querySelectorAll('.pd-next-btn').forEach(btn => {
+  btn.addEventListener('click', () => navigateProject('next'));
+});
+
+// Close detail on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && projectDetailContainer.classList.contains('active')) {
+    closeProjectDetail();
+  }
+});
+
+// Update cursor hover states for new buttons
+const detailButtons = document.querySelectorAll(
+  '.pd-back-btn, .pd-nav-btn'
+);
+detailButtons.forEach(btn => {
+  btn.addEventListener('mouseenter', () => {
+    if (ring) ring.classList.add('hovered');
+  });
+  btn.addEventListener('mouseleave', () => {
+    if (ring) ring.classList.remove('hovered');
+  });
+});
